@@ -10,6 +10,8 @@
   --color-secundario: #166534;      /* Verde medio */
   --color-acento: #22c55e;          /* Verde lima claro para botones o links */
   --color-fondo: #f0fdf4;           /* Verde muy claro de fondo */
+  --color-fondo-2: #dafae7;
+  --color-fondo-3: #104b283d;
   --color-texto: #0f172a;           /* Azul gris oscuro para buen contraste */
   --color-blanco: #ffffff;
   --color-gris: #e2e8f0;            /* Para bordes o fondos suaves */
@@ -53,8 +55,8 @@
 span{
   width: 100%;
   height: 5px;
-  background-color: white;
-  color: #0f172a;
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
   position: relative;
   transition: 1s;
 }
@@ -118,7 +120,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: var(--color-blanco);
   font-weight: 500;
   font-size: 16px;
   position: relative;
@@ -166,7 +168,7 @@ nav a:hover::after {
   justify-content: center;
   align-items: start;
   flex-direction: column;
-  color: white;
+  color: var(--color-blanco);
   transition: background 0.5s ease-in-out;
 }
 
@@ -205,7 +207,7 @@ h1{
 #section2{
   background: var(--color-principal);
   flex-direction: column;
-  color: white;
+  color: var(--color-blanco);
   padding-bottom: 30px;
   padding-top: 30px;
 }
@@ -274,7 +276,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dafae7;
+  background-color: var(--color-fondo-2);
 }
 
 .twin p{
@@ -379,7 +381,7 @@ footer{
 .interno{
   width: 100%;
   transition: height 1s ease-in-out;
-  background-color: #104b28;
+  background-color: var(--color-principal);
 }
 
 .formulario{
@@ -390,7 +392,7 @@ footer{
   justify-content: space-evenly;
   align-items: center;
   border: solid 1px var(--color-principal);
-  background-color: #104b283d;
+  background-color: var(--color-fondo-3);
 }
 
 .formulario h2{
@@ -421,7 +423,7 @@ footer{
 }
 
 .formulario button:hover{
-  background-color: #22c55eef;
+  background-color: var(--color-acento);
 }
 
 .formulario button:hover::after{
@@ -469,7 +471,7 @@ footer{
 .formulario input:focus ~ label, 
 .formulario input:not(:placeholder-shown) ~ label{
   transform: translateY(-15px);
-  background-color: #ffffff;
+  background-color: var(--color-blanco);
   font-size: small;
   color: var(--color-acento);
   width: 60px;
@@ -482,7 +484,7 @@ footer{
 
 /*Section 7*/
 #section7{
-  background-color: #dafae7;
+  background-color: var(--color-fondo-2);
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -502,7 +504,7 @@ footer{
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
-  color: #0f172a;
+  color: var(--color-texto);
 }
 
 .simulador{
@@ -546,13 +548,13 @@ footer{
   height: 50px;
   width: 120px;
   border-radius: 9px;
-  background-color:#15803d;
+  background-color: var(--color-hover);
   transition: .5s;
   border: solid 2px black;
 }
 
 .botonSimulador:hover{
-  background-color:#15803cc9;
+  background-color:var(--color-hover);
 }
 
 /*responsive*/

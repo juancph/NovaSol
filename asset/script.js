@@ -77,3 +77,57 @@ mostrar.onclick = () => {
     nav.classList.toggle("activar")
     mostrar.classList.toggle("e")
 }
+
+//Simulador
+let botonSimulador = document.querySelector(".botonSimulador");
+let barraPanel = document.getElementById("barra_panel");
+let barraSimulador = document.getElementById("barra_simulador");
+let textoResultado = document.querySelector(".textoResultado");
+
+botonSimulador.addEventListener("click", () => {
+  let panelW = parseFloat(barraPanel.value);
+  let consumoMes = parseFloat(barraSimulador.value);
+
+  if (!Number.isFinite(panelW) || !Number.isFinite(consumoMes)) {
+    alert("Error: Llene los campos");
+    return;
+  }
+
+  let panelesKW = panelW / 1000;
+  let horasSolaresDia = 4.5;
+
+  let energiaPanelesMes = panelesKW * horasSolaresDia * 30;
+
+  let porcentajeRenovable = (energiaPanelesMes / consumoMes) * 100;
+  if (porcentajeRenovable > 100) porcentajeRenovable = 100;
+
+  let ahorroKWh = Math.min(energiaPanelesMes, consumoMes);
+
+  let precioKWh = 900;
+  let ahorroDinero = ahorroKWh * precioKWh;
+
+  let totalFactura = consumoMes * precioKWh;
+
+  let pagoConPaneles = totalFactura - ahorroDinero;
+
+  textoResultado.style.display = "block";
+
+  textoResultado.textContent =
+    `Tus paneles generarían aproximadamente ${energiaPanelesMes.toFixed(2)} kWh/mes. ` +
+    `Esto cubre el ${porcentajeRenovable.toFixed(2)}% de tu consumo mensual ` +
+    `y te ahorra ${ahorroKWh.toFixed(2)} kWh al mes, es decir ` +
+    `$${ahorroDinero.toLocaleString("es-CO")} pesos ` +
+    `de los $${totalFactura.toLocaleString("es-CO")} pesos que tendrías que pagar, ` +
+    `teniendo que pagar tan solo $${pagoConPaneles.toLocaleString("es-CO")} pesos, ` +
+    `en lugar de $${totalFactura.toLocaleString("es-CO")} pesos.`;
+
+  barraPanel.value = "";
+  barraSimulador.value = "";
+});
+
+
+function enter(input) {
+  input.addEventListener("keydown", e => e.key === "Enter" && botonSimulador.click());
+}
+enter(barraPanel);
+enter(barraSimulador);

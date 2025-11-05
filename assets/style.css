@@ -2,20 +2,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:"Noto Sans";
 }
 
 :root {
-  --color-principal: #104b28;       /* Verde oscuro */
-  --color-secundario: #166534;      /* Verde medio */
-  --color-acento: #22c55e;          /* Verde lima claro para botones o links */
-  --color-fondo: #f0fdf4;           /* Verde muy claro de fondo */
+  --color-principal: #104b28;
+  --color-secundario: #166534;
+  --color-acento: #22c55e;
+  --color-fondo: #f0fdf4;
   --color-fondo-2: #dafae7;
   --color-fondo-3: #104b283d;
-  --color-texto: #0f172a;           /* Azul gris oscuro para buen contraste */
+  --color-texto: #0f172a;
   --color-blanco: #ffffff;
-  --color-gris: #e2e8f0;            /* Para bordes o fondos suaves */
-  --color-hover: #15803d;           /* Verde más fuerte para efectos hover */
+  --color-gris: #e2e8f0;
+  --color-hover: #15803d;
 }
 
 ::-webkit-scrollbar{
@@ -162,6 +162,7 @@ nav a:hover::after {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
   z-index: 0;
   display: flex;
